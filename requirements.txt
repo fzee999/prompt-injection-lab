@@ -1,0 +1,5 @@
+openai>=1.50
+python-dotenv>=1.0
+streamlit>=1.38
+matplotlib>=3.8      # scripts/aggregate.py (chart)
+reportlab>=4.0       # paper/build_paper.py (PDF)

@@ -1,0 +1,7 @@
+setting,direct_%,indirect_%,leakage_%,overall_%,direct_n,indirect_n,leakage_n
+baseline,67,40,20,42,10/15,6/15,3/15
+D1_hardened_prompt,33,40,0,24,5/15,6/15,0/15
+D2_input_filter,0,40,0,13,0/15,6/15,0/15
+D3_delimit_docs,33,27,13,24,5/15,4/15,2/15
+D4_output_check,67,33,0,33,10/15,5/15,0/15
+all_defenses,0,33,0,11,0/15,5/15,0/15

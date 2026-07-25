@@ -1,0 +1,26 @@
+# Secrets: the real key lives here and must never be committed.
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Unmasked per-reply logs contain the (fake) canary in leaked replies.
+# Committed instead: results/summary.csv, results/chart.png, and the masked
+# evidence results/transcripts.md + results/replies_masked.csv.
+results/raw_*.csv
+results/benign_*.csv
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Personal job-search / application prep, and local tool config: keep out of the repo.
+private/
+CLAUDE.md
+.claude/
+/docs/
