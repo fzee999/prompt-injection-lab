@@ -6,8 +6,6 @@ A small, reproducible experiment: build a document-Q&A assistant with a secret i
 
 **Headline:** the four simple defenses together cut attack success from **42% to 11%** — but every attack that still gets through is **indirect** (a malicious instruction hidden in a document). Direct attacks and secret-leakage are driven to zero; injection hidden in the documents is the residual threat.
 
-**Paper:** the full write-up as a research paper is at [paper/prompt-injection-lab-paper.pdf](paper/prompt-injection-lab-paper.pdf), with the per-attack outcome matrix and the prompts and replies as appendices.
-
 **Evidence:** every prompt and every one of the model's replies, under every setting, with the verdict and the reason for it, is in [results/transcripts.md](results/transcripts.md) (secret masked). The same rows are machine-readable in [results/replies_masked.csv](results/replies_masked.csv).
 
 ![Results](results/chart.png)
@@ -49,8 +47,6 @@ Utility was 7/7 benign questions correct under every setting.
 Read as defenses being **specialists**: D2 clears the direct channel but is blind to indirect (it never sees the poisoned document); D4 clears leakage but is blind to hijack; D1 helps direct and leakage but not indirect; **D3 is the only defense that reduces indirect at all**, and only from 40% to 27%. Stack everything and direct and leakage vanish, while a third of indirect attacks still land.
 
 ## Hypotheses, scored
-
-Written before the run, in [docs/00-project-overview.md](docs/00-project-overview.md):
 
 | # | Hypothesis | Verdict |
 |---|---|---|
@@ -104,17 +100,10 @@ data/docs/    the four policy documents
 data/attacks/ direct.toml, indirect.toml, leakage.toml
 scripts/      validate_attacks, run_matrix, aggregate, try_attacks, try_defense, ask
 results/      summary.csv, chart.png  (raw per-reply CSV is git-ignored)
-paper/        build_paper.py and the research paper PDF it produces
-docs/         00-project-overview.md and one file per build step, each with a "Revise" block
+paper/        the research paper PDF
 app.py        the Streamlit lab
 ```
-
-Full method and every decision: [docs/00-project-overview.md](docs/00-project-overview.md) and the step files in `docs/steps/`.
 
 ## Note on tooling
 
 This project was built with AI-assisted programming tools. The research question, experimental design, hypotheses, analysis and interpretation are my own, and every reported result comes from running the code in this repository.
-
----
-
-*Built as a two-day project. Not a security certification of any model; a measured, reproducible starting point.*
